@@ -1,0 +1,46 @@
+<div class="status-panel">
+  <div class="stat-row">
+    <div class="stat">
+      <span class="stat__value" [class.stat__value--active]="isIndexed()">
+        {{ stats()?.vectorCount ?? '—' }}
+      </span>
+      <span class="stat__label">Vectors indexed</span>
+    </div>
+    <div class="stat">
+      <span class="stat__value">{{ jobs().length }}</span>
+      <span class="stat__label">Jobs this session</span>
+    </div>
+    <div class="stat">
+      <span class="stat__value">{{ completedCount() }}</span>
+      <span class="stat__label">Completed</span>
+    </div>
+  </div>
+
+  @if (isIndexed()) {
+    <div class="indexed-badge">
+      ✅ Index ready — {{ stats()?.vectorCount }} chunks searchable
+    </div>
+  }
+
+  @if (jobs().length === 0) {
+    <p class="no-jobs">No new files indexed this session</p>
+  } @else {
+    <div class="jobs">
+      <p class="jobs__title">Recent indexing jobs</p>
+      @for (job of jobs().slice(0, 5); track job.id) {
+        <div class="job">
+          <span class="job__icon">{{ statusLabel(job.status) }}</span>
+          <span class="job__name">{{ job.fileName }}</span>
+          <span class="job__chunks">
+            @if (job.status === 'Completed') {
+              {{ job.totalChunks }} chunks
+            }
+            @if (job.status === 'Failed') {
+              {{ job.errorMessage }}
+            }
+          </span>
+        </div>
+      }
+    </div>
+  }
+</div>

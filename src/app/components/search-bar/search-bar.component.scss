@@ -1,0 +1,64 @@
+.search-bar {
+  width: 100%;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .icon {
+    position: absolute;
+    left: 14px;
+    color: #9ca3af;
+    display: flex;
+    pointer-events: none;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px 48px 14px 44px;
+    font-size: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+    outline: none;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+    font-family: inherit;
+    color: #111827;
+
+    &::placeholder {
+      color: #9ca3af;
+    }
+
+    &:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+  }
+
+  .spinner {
+    position: absolute;
+    right: 14px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #e5e7eb;
+    border-top-color: #6366f1;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+}
+
+.hint {
+  margin: 6px 2px 0;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

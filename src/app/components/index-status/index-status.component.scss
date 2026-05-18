@@ -1,0 +1,98 @@
+.status-panel {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.stat-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+  }
+
+  &__label {
+    font-size: 0.72rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+.jobs {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 12px;
+
+  &__title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 8px;
+  }
+}
+
+.job {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid #f9fafb;
+  font-size: 0.8rem;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__icon {
+    font-size: 0.9rem;
+  }
+
+  &__name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #374151;
+    font-weight: 500;
+  }
+
+  &__chunks {
+    color: #9ca3af;
+    white-space: nowrap;
+    font-size: 0.75rem;
+  }
+}
+
+.indexed-badge {
+  font-size: 0.75rem;
+  color: #15803d;
+  background: #dcfce7;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-top: 4px;
+}
+
+.no-jobs {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+.stat__value--active {
+  color: #6366f1;
+}

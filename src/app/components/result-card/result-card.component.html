@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card__header">
+    <span class="rank">#{{ result().rank }}</span>
+    <div class="source">
+      <span class="source__icon">📄</span>
+      <span class="source__name">{{ result().sourceFile }}</span>
+      <span class="source__meta">p.{{ result().pageNumber }}</span>
+    </div>
+    <span class="score" [class]="scoreClass()">
+      {{ scorePercent() }}% match
+    </span>
+  </div>
+
+  <div class="card__body">
+    <p class="content" [innerHTML]="highlightedContent()"></p>
+  </div>
+
+  <div class="card__footer">
+    <span class="meta">Chunk {{ result().chunkIndex + 1 }}</span>
+    <div class="score-bar">
+      <div class="score-bar__fill" [style.width.%]="scorePercent()"></div>
+    </div>
+  </div>
+</div>

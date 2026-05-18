@@ -1,0 +1,127 @@
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #f9fafb;
+    border-bottom: 1px solid #f3f4f6;
+    flex-wrap: wrap;
+  }
+
+  &__body {
+    padding: 14px 16px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background: #f9fafb;
+    border-top: 1px solid #f3f4f6;
+  }
+}
+
+.rank {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6366f1;
+  background: #eef2ff;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.source {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+
+  &__name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #374151;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__meta {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    white-space: nowrap;
+  }
+}
+
+.score {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+
+  &--high {
+    background: #dcfce7;
+    color: #15803d;
+  }
+  &--medium {
+    background: #fef9c3;
+    color: #854d0e;
+  }
+  &--low {
+    background: #fee2e2;
+    color: #b91c1c;
+  }
+}
+
+.content {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #374151;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+
+  ::ng-deep mark {
+    background: #fef08a;
+    color: inherit;
+    border-radius: 3px;
+    padding: 0 2px;
+  }
+}
+
+.meta {
+  font-size: 0.72rem;
+  color: #9ca3af;
+}
+
+.score-bar {
+  width: 80px;
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+
+  &__fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #818cf8);
+    border-radius: 4px;
+    transition: width 0.4s ease;
+  }
+}
